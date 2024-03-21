@@ -1,6 +1,6 @@
 ﻿namespace CleanArchitecture.Domain.Interfaces;
 
-public interface IUnitofWork
+public interface IUnitOfWork
 {
     Task Commit(CancellationToken cancellationToken = default);
 }

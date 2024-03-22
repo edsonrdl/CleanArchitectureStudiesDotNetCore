@@ -1,5 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Runtime.Serialization;
+using CleanArchitecture.Persistence;
+using CleanArchitecture.Persistence.Context;
+using CleanArchitecture.Application.Services;
 
+var builder = WebApplication.CreateBuilder(args);
+//builder.Services.AddDbContext<Contexto>
+//    (Options => Options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=MVC_CRUD_DOTNET_SQL;Trusted_Connection=True;MultipleActiveResultSets=true"));
+
+builder.Services.ConfiguretionPersistenceApp(builder.Configuration);
+builder.Services.ConfigureApplicationApp();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -18,6 +27,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+CreateDatabase(app);
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -25,3 +39,9 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+static void CreateDatabase(WebApplication app)
+{
+    var serviceScope = app.Services.CreateScope();
+    var dataContext = serviceScope.ServiceProvider.GetService<AppDbContext>();
+    dataContext?.Database.EnsureCreated();
+}

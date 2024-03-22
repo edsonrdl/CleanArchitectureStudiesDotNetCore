@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Domain.Entities;
 
-namespace CleanArchitecture.Applicatiion.UseCases.CreateUser;
+namespace CleanArchitecture.Application.UseCases.CreateUser;
 
 public sealed class CreateUserMapper : Profile
 {

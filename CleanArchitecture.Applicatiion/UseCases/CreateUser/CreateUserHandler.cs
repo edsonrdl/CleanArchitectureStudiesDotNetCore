@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
 using MediatR;
 
-namespace CleanArchitecture.Applicatiion.UseCases.CreateUser;
+namespace CleanArchitecture.Application.UseCases.CreateUser;
 
 public class CreateUserHandler :
     IRequestHandler<CreateUserRequest, CreateUserResponse>

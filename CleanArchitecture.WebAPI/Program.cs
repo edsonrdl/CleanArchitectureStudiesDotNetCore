@@ -31,6 +31,7 @@ CreateDatabase(app);
 
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors();
 
 app.UseAuthorization();
 

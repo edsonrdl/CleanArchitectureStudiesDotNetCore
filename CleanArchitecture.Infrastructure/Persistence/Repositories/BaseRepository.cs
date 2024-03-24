@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using CleanArchitecture.Domain.Entities;
-using CleanArchitecture.Domain.Interfaces;
-using CleanArchitecture.Persistence.Context;
+﻿using CleanArchitecture.Domain.Entities;
+using CleanArchitecture.Domain.Interfaces.Repositories;
+using CleanArchitecture.Domain.Interfaces.Repositories.UseCases;
+using CleanArchitecture.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitecture.Persistence.Repositories
+namespace CleanArchitecture.Infrastructure.Persistence.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
@@ -21,8 +16,8 @@ namespace CleanArchitecture.Persistence.Repositories
         }
         public void Create(T entity)
         {
-           entity.DateCreated=DateTimeOffset.UtcNow;
-           Context.Add(entity);
+            entity.DateCreated = DateTimeOffset.UtcNow;
+            Context.Add(entity);
         }
 
         public void Update(T entity)
@@ -33,7 +28,7 @@ namespace CleanArchitecture.Persistence.Repositories
 
         public void Delete(T entity)
         {
-            entity.DateDeleted= DateTimeOffset.UtcNow;
+            entity.DateDeleted = DateTimeOffset.UtcNow;
             Context.Remove(entity);
         }
 

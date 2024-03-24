@@ -1,4 +1,4 @@
-namespace CleanArchitecture.WebAPI.Models
+namespace CleanArchitecture.Infrastructure.Persistence.Models
 {
     public class ErrorViewModel
     {

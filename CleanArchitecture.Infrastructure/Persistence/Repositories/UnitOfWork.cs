@@ -1,15 +1,15 @@
 ﻿using CleanArchitecture.Domain.Interfaces;
-using CleanArchitecture.Persistence.Context;
+using CleanArchitecture.Infrastructure.Persistence.Context;
 
-namespace CleanArchitecture.Persistence.Repositories;
+namespace CleanArchitecture.Infrastructure.Persistence.Repositories;
 
-public class UnitOfWork:IUnitOfWork
+public class UnitOfWork : IUnitOfWork
 {
     private readonly AppDbContext _context;
 
     public UnitOfWork(AppDbContext context)
     {
-        _context=context;
+        _context = context;
     }
 
     public async Task Commit(CancellationToken cancellationToken)

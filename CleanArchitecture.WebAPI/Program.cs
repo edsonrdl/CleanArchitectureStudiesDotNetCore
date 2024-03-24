@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
-using CleanArchitecture.Persistence;
-using CleanArchitecture.Persistence.Context;
 using CleanArchitecture.Application.Services;
+using CleanArchitecture.Infrastructure.Persistence;
+using CleanArchitecture.Infrastructure.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<Contexto>

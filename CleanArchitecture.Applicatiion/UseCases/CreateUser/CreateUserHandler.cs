@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Domain.Entities;
 using CleanArchitecture.Domain.Interfaces;
+using CleanArchitecture.Domain.Interfaces.Repositories;
+using CleanArchitecture.Domain.Interfaces.Repositories.UseCases;
 using MediatR;
 
 namespace CleanArchitecture.Application.UseCases.CreateUser;

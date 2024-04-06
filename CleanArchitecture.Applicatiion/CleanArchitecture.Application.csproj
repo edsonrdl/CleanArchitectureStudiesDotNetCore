@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Shared\Exceptions\**" />
+    <EmbeddedResource Remove="Shared\Exceptions\**" />
+    <None Remove="Shared\Exceptions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Shared\Exceptions\" />
+    <Folder Include="Shared\Exeptions\" />
   </ItemGroup>
 
   <ItemGroup>

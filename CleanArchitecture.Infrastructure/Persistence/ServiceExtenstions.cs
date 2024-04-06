@@ -13,8 +13,8 @@ public static class ServiceExtenstions
 {
     public static void ConfiguretionPersistenceApp(this IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("DefaultConnection");
-        services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
+        var connectionString = configuration.GetConnectionString("Sqlite");
+        services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(connectionString));
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<IUserRepository, UserRepository>();
 
